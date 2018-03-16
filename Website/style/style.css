@@ -199,18 +199,28 @@ nav #nav_mobile #nav_mobile_container ul li a.active {
     margin: 0 auto;
     width: 100%;
     height: 50vh;
+    text-align: center;
+    margin-top: 30vh !important;
 }
 
 #fields input {
-    
+    margin: 0 auto;
+    padding: 0 10% 0 10%;
+    height:80px;
+    width:80%;
 }
 
-#fields input.departure {
 
+#fields input.departure {
+    margin-top:30px;
 }
 
 #fields input.destination {
+    margin-top:30px;
+}
 
+#fields input[type=submit] {
+    margin-top: 30px;
 }
 
 
