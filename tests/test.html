@@ -13,7 +13,7 @@
             xml.open("POST", "getTransportVeloh.php");
 
             xml.addEventListener("load", (e) => {
-                console.log(e.target.response);
+                console.log(JSON.parse(e.target.response));
             });
 
             let data = new FormData();
