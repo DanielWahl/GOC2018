@@ -193,7 +193,25 @@ nav #nav_mobile #nav_mobile_container ul li a.active {
 }
 
 
+/*****   FIELDS   *****/
 
+#fields {
+    margin: 0 auto;
+    width: 100%;
+    height: 50vh;
+}
+
+#fields input {
+
+}
+
+#fields input.departure {
+
+}
+
+#fields input.destination {
+
+}
 
 
 
