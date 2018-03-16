@@ -18,7 +18,11 @@ $result = json_decode($result);
 $busStations = $result->features;
 
 foreach($busStations as $busStation){
-    echo $busStation->geometry->coordinates[0] . ';' . $busStation->geometry->coordinates[1] . '<br />';
+    $busStation->lat = $busStation->geometry->coordinates[0];
+    $busStation->lng = $busStation->geometry->coordinates[1];
+    $busStation->id = $busStation->properties->id;
+    $busStation->name = $busStation->properties->name;
+    echo $busStation->lat . ';' . $busStation->lng . '||' . $busStation->id . '||' . $busStation->name . '<br />';
 }
 
 
