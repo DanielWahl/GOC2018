@@ -1,0 +1,62 @@
+/****
+*      Game of Code 2018        *
+*      Design & Code by TTS     *
+*      contact@danielwahl.lu    *
+**/
+
+
+
+/*****   GLOBAL   *****/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+.desktop {
+    display:block;
+}
+
+.mobile {
+    display:none;
+}
+
+
+
+/*****    NAVIGATION   *****/
+
+nav {
+    left: 0;
+    width:100%;
+    height:250px;
+}
+
+nav #desktop {
+
+}
+
+
+
+nav ul {
+
+}
+
+nav ul li {
+
+}
