@@ -19,10 +19,10 @@ $(document).ready(function(){
         $('.counter').html(scrollTop);
 
 
-        if (scrollTop >= 100) {
+        if (scrollTop >= 120) {
             $('#nav_scroll').fadeIn();
-        } else if (scrollTop < 100) {
-            $('#nav_scroll').css('display', 'none');
+        } else if (scrollTop < 120) {
+            $('#nav_scroll').fadeOut();
         }
 
     });
