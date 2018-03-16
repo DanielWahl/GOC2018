@@ -11,6 +11,10 @@
     --section-map-color: #CEECF5;
 }
 
+@font-face {
+    font-family: TheBlacksmith; src: url('The Blacksmith.ttf');
+}
+
 
 /*****   GLOBAL   *****/
 * {
@@ -134,7 +138,7 @@ nav {
 }
 
 .logo {
-
+    font-family: TheBlacksmith;
 }
 
 /**-- NAV_DESKTOP --**/
