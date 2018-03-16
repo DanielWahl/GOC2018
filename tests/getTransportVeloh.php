@@ -24,7 +24,7 @@ $live_data = file_get_contents("https://api.jcdecaux.com/vls/v1/stations?apiKey=
 
 $live_data = json_decode($live_data);
 
-require_once "../utils/LocationUtils.php";
+require_once "../utils/Utils.php";
 
 $start_distance = 99999999;
 $dest_distance = 9999999;
