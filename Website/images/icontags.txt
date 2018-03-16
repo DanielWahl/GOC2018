@@ -1,0 +1,5 @@
+Bus <span class="glyphicons glyphicons-bus"></span>
+Train <span class="glyphicons glyphicons-train"></span>
+Car <span class="glyphicons glyphicons-car"></span>
+Velo <span class="glyphicons glyphicons-bicycle"></span>
+Foot <span class="glyphicons glyphicons-person-walking"></span>
