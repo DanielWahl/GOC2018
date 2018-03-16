@@ -361,7 +361,7 @@ nav #nav_mobile #nav_mobile_container ul li a.active {
 
 section {
     height: auto;
-    min-height: 300px;
+    min-height: 40vh;
     width: 100%;
     left: 0;
 }
@@ -369,15 +369,44 @@ section {
 section .content {
     margin: 0 auto;
     width: 720px;
-
+    min-height: 35vh;
 }
+
+/**-- EVAL --**/
 
 section#evaluation {
     background-color:white;
 }
 
-section#map {
+section#evaluation .content{
+    background-color:white;
+    padding-top: 5vh;
+}
+
+
+/**-- MAP --**/
+
+section#mapeval {
     background-color: var(--section-map-color);
+    height:60vh;
+}
+#map {
+    width:100%;
+    height:100%;
+    margin: 0 auto;
+    background-color:green;
+    margin-top:-60vh !important;
+    z-index:3;
+    margin-left: 5px;
+}
+
+.overlay {
+    background: red;/*rgba(0,255,0,0.2); */
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    z-index:4;
 }
 
 
