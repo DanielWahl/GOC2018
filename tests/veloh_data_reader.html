@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        let response_live, response_stations;
+
+        function init () {
+
+            let xml = new XMLHttpRequest();
+
+            xml.open("POST", "../data_collection/veloh/data_example.json");
+
+            xml.addEventListener("load", (e) => {
+                response_live = JSON.parse(e.target.response);
+
+                let luxemburg_bikes = [];
+                for(let i = 0; i < response_live.length; i++) {
+                    if(response_live[i].contract_name === "Luxembourg")
+                    luxemburg_bikes.push(response_live[i]);
+                }
+
+                response_live = luxemburg_bikes;
+            });
+
+            xml.send();
+
+            let xml2 = new XMLHttpRequest();
+            xml2.open("POST", "../data_collection/veloh/stations.json");
+
+            xml2.addEventListener("load", (e) => {
+
+                response_stations = JSON.parse(e.target.response);
+
+            });
+
+            xml2.send();
+
+        }
+
+        addEventListener("load", init);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
