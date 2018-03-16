@@ -205,9 +205,22 @@ nav #nav_mobile #nav_mobile_container ul li a.active {
 
 #fields input {
     margin: 0 auto;
-    padding: 0 10% 0 10%;
-    height:80px;
+    padding: 0 3% 0 3%;
+    height:65px;
     width:80%;
+    border: 1px;
+    border-radius: 7px;
+    box-shadow: rgba(150, 150, 150, 1);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#fields input:focus{
+    /*outline-color: lightblue;*/
+    outline: none;
+    box-shadow: 0 0 5px lightblue;
+    -moz-outline-radius: 7px;
+
+
 }
 
 
@@ -221,6 +234,7 @@ nav #nav_mobile #nav_mobile_container ul li a.active {
 
 #fields input[type=submit] {
     margin-top: 30px;
+    background-color: rgba(255, 255, 255, 1);
 }
 
 
