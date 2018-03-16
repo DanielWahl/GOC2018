@@ -11,3 +11,20 @@ function close_navigation() {
     $('#open_nav').css('display', 'block');
     $('#close_nav').css('display', 'none');
 }
+
+$(document).ready(function(){
+    var scrollTop = 0;
+    $(window).scroll(function(){
+        scrollTop = $(window).scrollTop();
+        $('.counter').html(scrollTop);
+
+
+        if (scrollTop >= 100) {
+            $('#nav_scroll').fadeIn();
+        } else if (scrollTop < 100) {
+            $('#nav_scroll').css('display', 'none');
+        }
+
+    });
+
+});
