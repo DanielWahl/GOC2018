@@ -5,6 +5,12 @@
 **/
 
 
+/*****   VARIABLES   *****/
+
+:root {
+    --section-map-color: #CEECF5;
+}
+
 
 /*****   GLOBAL   *****/
 * {
@@ -68,7 +74,7 @@ header {
 }
 
 header#analyzed {
-    min-height: calc(100% - 15px);
+    height:50vh;
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -127,6 +133,10 @@ nav {
     z-index:2;
 }
 
+.logo {
+
+}
+
 /**-- NAV_DESKTOP --**/
 nav #nav_desktop {
     display:block;
@@ -145,7 +155,7 @@ nav #nav_desktop ul li{
     display: inline;
 
     text-align: center;
-    font-size: 3em;
+    font-size: 2.5em;
 
 }
 
@@ -157,7 +167,7 @@ nav #nav_desktop ul li a {
     margin-right: 5%;
 }
 
-nav #nav_desktop ul li a.nav_logo {
+nav #nav_desktop ul li .logo {
     left:0;
     float:left;
     margin-left: 20px;
@@ -201,7 +211,7 @@ nav #nav_scroll ul li{
     display: inline;
 
     text-align: center;
-    font-size: 1em;
+    font-size: 1.5em;
 
 }
 
@@ -213,7 +223,7 @@ nav #nav_scroll ul li a {
     margin-right: 5%;
 }
 
-nav #nav_scroll ul li a.nav_logo {
+nav #nav_scroll ul li .logo {
     left:0;
     float:left;
     margin-left: 20px;
@@ -228,6 +238,10 @@ nav #nav_scroll ul li a.active {
 /**-- NAV_MOBILE --**/
 nav #nav_mobile, nav #nav_mobile #nav_mobile_container {
     display:none;
+}
+
+#nav_mobile .logo {
+
 }
 
 #open_nav {
@@ -288,15 +302,33 @@ nav #nav_mobile #nav_mobile_container ul li a.active {
     margin-top: 30vh !important;
 }
 
+#analyzed #fields {
+    height:auto;
+    margin-top: 10vh !important;
+}
+
 #fields input {
     margin: 0 auto;
     padding: 0 3% 0 3%;
     height:65px;
     width:80%;
     border: 1px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
     border-radius: 7px;
     box-shadow: rgba(150, 150, 150, 1);
     background-color: rgba(255, 255, 255, 0.8);
+    margin-top: 30px !important;
+}
+
+#analyzed #fields input {
+    height:30px;
+    width:60%;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    margin-top:10px !important;
+
 }
 
 #fields input:focus{
@@ -304,21 +336,18 @@ nav #nav_mobile #nav_mobile_container ul li a.active {
     outline: none;
     box-shadow: 0 0 5px lightblue;
     -moz-outline-radius: 7px;
-
-
 }
 
 
 #fields input.departure {
-    margin-top:30px;
+
 }
 
 #fields input.destination {
-    margin-top:30px;
+
 }
 
 #fields input[type=submit] {
-    margin-top: 30px;
     background-color: rgba(255, 255, 255, 1);
 }
 
@@ -343,7 +372,7 @@ section#evaluation {
 }
 
 section#map {
-    background-color: #BBDEFB;
+    background-color: var(--section-map-color);
 }
 
 
@@ -392,6 +421,10 @@ section#map {
         width: 100%;
     }
 
+    .logo {
+
+    }
+
     nav #nav_desktop {
         display:none;
     }
@@ -399,6 +432,21 @@ section#map {
     nav #nav_mobile {
         display:block;
     }
+
+    nav #nav_scroll {
+        display: none !important;
+    }
+
+    #fields {
+        margin-top: 20vh !important;
+    }
+
+    #analyzed #fields input {
+        width:90%;
+        height:40px;
+
+    }
+
 
     /*** SECTIONS ***/
 
