@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function init() {
+
+            console.log("init");
+
+            let xml = new XMLHttpRequest();
+            xml.open("POST", "getTransports.php");
+
+            xml.addEventListener("load", (e) => {
+                console.log(e.target.response);
+            });
+
+            let data = new FormData();
+
+            data.append("start_lng", "1");
+            data.append("start_lat", "1");
+            data.append("dest_lng", "1");
+            data.append("dest_lat", "1");
+
+            xml.send(data);
+
+        }
+
+        addEventListener("load", init);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
