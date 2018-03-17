@@ -79,11 +79,11 @@ function getTransportVeloh($start_lat, $start_lng, $dest_lat, $dest_lng) {
 
 // http://maps.googleapis.com/maps/api/distancematrix/json?origins=<START_LAT>,<START_LNG>&destinations=<DEST_LAT>,<DEST_LNG>&mode=<bicycling|walking|driving>
 
-    $way_to_start = json_decode(file_get_contents("http://maps.googleapis.com/maps/api/distancematrix/json?origins=" . $start_lat . "," . $start_lng . "&destinations=" . $start_loc->position->lat . "," . $start_loc->position->lng . "&mode=walking"));
+    $way_to_start       = json_decode(file_get_contents("http://maps.googleapis.com/maps/api/distancematrix/json?origins=" . $start_lat . "," . $start_lng . "&destinations=" . $start_loc->position->lat . "," . $start_loc->position->lng . "&mode=walking"));
 
-    $way_with_bicycle = json_decode(file_get_contents("http://maps.googleapis.com/maps/api/distancematrix/json?origins=" . $start_loc->position->lat . "," . $start_loc->position->lng . "&destinations=" . $dest_loc->position->lat . "," . $dest_loc->position->lng . "&mode=bicycling"));
+    $way_with_bicycle   = json_decode(file_get_contents("http://maps.googleapis.com/maps/api/distancematrix/json?origins=" . $start_loc->position->lat . "," . $start_loc->position->lng . "&destinations=" . $dest_loc->position->lat . "," . $dest_loc->position->lng . "&mode=bicycling"));
 
-    $way_to_dest = json_decode(file_get_contents("http://maps.googleapis.com/maps/api/distancematrix/json?origins=" . $dest_loc->position->lat . "," . $dest_loc->position->lng . "&destinations=" . $dest_lat . "," . $dest_lng . "&mode=walking"));
+    $way_to_dest        = json_decode(file_get_contents("http://maps.googleapis.com/maps/api/distancematrix/json?origins=" . $dest_loc->position->lat . "," . $dest_loc->position->lng . "&destinations=" . $dest_lat . "," . $dest_lng . "&mode=walking"));
 
 
 // create output

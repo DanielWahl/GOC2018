@@ -180,9 +180,13 @@ nav #nav_desktop ul li{
 nav #nav_desktop ul li a {
     padding:0 0 0 0;
     color:white;
-    text-shadow: 1px 1px 21px rgba(150, 150, 150, 1);
+    text-shadow: 1px 1px 30px rgba(70, 70, 70, 1);
     float: right;
     margin-right: 5%;
+}
+
+nav #nav_desktop ul li a:hover {
+    text-shadow: 5px 5px 70px rgba(0, 0, 0, 1);
 }
 
 nav #nav_desktop ul li .logo {
