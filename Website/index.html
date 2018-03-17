@@ -10,6 +10,7 @@
 <body>
 <div id="content">
 
+    <div id="loading_overlay"></div>
     <header>
         <div id="h_overlay">
             <div id="resize_content">
@@ -72,7 +73,7 @@
                         <input type="submit" name="submit" value="Start" />
 
                     </form>
-
+                    <button onclick="changeTemplate();">Change Template</button>
                 </div>
             </div>
         </div>
@@ -90,19 +91,24 @@
                 Dier braucht mam:<br>
             <table>
                 <tr>
-                    <th>Bus</th>
-                    <td><span id="bus_zeit"></span> min</td>
-                    <td><span id="bus_distance"></span> km</td>
+                    <th><img src="images/bus.svg" style="height:auto; width:70px;"></th>
+                    <td><span id="bus_zeit"></span><hr style="width:100px">min</td>
+                    <td><span id="bus_distance"></span><hr style="width:100px">km</td>
                 </tr>
                 <tr>
-                    <th>Véloh</th>
-                    <td><span id="veloh_zeit"></span> min</td>
-                    <td><span id="veloh_distance"></span> km</td>
+                    <th><img src="images/bicycle.svg" style="height:auto; width:70px;"></th>
+                    <td><span id="veloh_zeit"></span><hr style="width:100px">min</td>
+                    <td><span id="veloh_distance"></span><hr style="width:100px">km</td>
                 </tr>
                 <tr>
-                    <th>Auto</th>
-                    <td><span id="auto_zeit"></span> min</td>
-                    <td><span id="auto_distance"></span> km</td>
+                    <th><img src="images/auto.svg" style="height:auto; width:70px;"></th>
+                    <td><span id="auto_zeit"></span><hr style="width:100px">min</td>
+                    <td><span id="auto_distance"></span><hr style="width:100px">km</td>
+                </tr>
+                <tr>
+                    <th><img src="images/person.svg" style="height:80px; width:auto;"></th>
+                    <td><span id="auto_zeit"></span><hr style="width:100px">min</td>
+                    <td><span id="auto_distance"></span><hr style="width:100px">km</td>
                 </tr>
             </table>
             </p>
