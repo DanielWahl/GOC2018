@@ -487,12 +487,18 @@ table td {
     header #h_overlay #resize_content {
         width: 920px;
     }
+    nav #nav_scroll {
+        width: 920px;
+    }
 
 }
 
 @media only screen and (max-width: 1180px) {
 
     header #h_overlay #resize_content {
+        width: 720px;
+    }
+    nav #nav_scroll {
         width: 720px;
     }
 
