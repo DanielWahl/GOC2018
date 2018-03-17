@@ -50,10 +50,14 @@
 
                 <div id="fields">
 
-                    <form method="post" action="start">
+                    <form method="get">
 
                         <input type="text" name="departure" id="autocomplete" onFocus="geolocate()" class="departure" placeholder="Departure"/><br>
-                        <input type="text" name="destination" id="autocomplete" onFocus="geolocate()" class="destination" placeholder="Destination"><br>
+                        <input type="text" name="destination" id="autocomplete2" onFocus="geolocate()" class="destination" placeholder="Destination"><br>
+                        <input type="hidden" name="latdep" id="latdep" />
+                        <input type="hidden" name="lngdep" id="lngdep" />
+                        <input type="hidden" name="latdes" id="latdes" />
+                        <input type="hidden" name="lngdes" id="lngdes" />
                         <input type="submit" name="submit" value="Start" />
 
                     </form>
@@ -68,7 +72,8 @@
 
 <!-- SCRIPTS -->
 <script src="scripts/navigation.js"></script>
-<scirpt src="scripts/autocomplete_field.js"></scirpt>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0klnwhWakNF6e3pkI2hkYGvu-By8CZ7I&callback=initMapindex" async defer></script>
+<script src="scripts/autocomplete_field.js"></script>
+<script src="scripts/features.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0klnwhWakNF6e3pkI2hkYGvu-By8CZ7I&libraries=places&callback=initAutocomplete" async defer></script>
 </body>
 </html>
