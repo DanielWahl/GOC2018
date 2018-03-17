@@ -19,6 +19,6 @@ $dest_lng = $_POST["dest_lng"];
 $dest_lat = $_POST["dest_lat"];
 
 
-require_once dirname(__FILE__) . "/Utils.php";
+require_once dirname(__FILE__) . "/../utils/Utils.php";
 
 echo json_encode(getTransportVeloh($start_lat, $start_lng, $dest_lat, $dest_lng));

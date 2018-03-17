@@ -20,6 +20,6 @@ $dest_lat = $_POST["dest_lat"];
 $dest_lng = $_POST["dest_lng"];
 
 
-require_once dirname(__FILE__) . "/Utils.php";
+require_once dirname(__FILE__) . "/../utils/Utils.php";
 
 echo json_encode(getTransportCar($start_lat, $start_lng, $dest_lat, $dest_lng));
