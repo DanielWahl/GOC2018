@@ -23,8 +23,8 @@ function loadValues() {
     xml.open("POST", "../API/getTransports.php");
 
     xml.onload = (e) => {
-
         let response = JSON.parse(e.target.response);
+
 
         httpRequestLoaded();
 
