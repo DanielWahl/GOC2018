@@ -9,6 +9,15 @@
 
             console.log("init");
 
+
+
+            getVeloh();
+
+            getCar();
+
+        }
+
+        function getVeloh() {
             let xml = new XMLHttpRequest();
             xml.open("POST", "getTransportVeloh.php");
 
@@ -28,7 +37,28 @@
             data.append("dest_lat", "49.587102");
 
             xml.send(data);
+        }
 
+        function getCar() {
+            let xml = new XMLHttpRequest();
+            xml.open("POST", "getTransportCar.php");
+
+            xml.addEventListener("load", (e) => {
+                console.log(JSON.parse(e.target.response));
+            });
+
+            let data = new FormData();
+
+            // 49.612946, 6.120784
+
+            // 49.587102, 6.142675
+
+            data.append("start_lng", "6.120784");
+            data.append("start_lat", "49.612946");
+            data.append("dest_lng", "6.142675");
+            data.append("dest_lat", "49.587102");
+
+            xml.send(data);
         }
 
         addEventListener("load", init);
