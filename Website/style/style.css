@@ -5,6 +5,16 @@
 **/
 
 
+/*****   VARIABLES   *****/
+
+:root {
+    --section-map-color: #CEECF5;
+}
+
+@font-face {
+    font-family: TheBlacksmith; src: url('The Blacksmith.ttf');
+}
+
 
 /*****   GLOBAL   *****/
 * {
@@ -68,7 +78,7 @@ header {
 }
 
 header#analyzed {
-    min-height: calc(100% - 15px);
+    height:50vh;
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -127,6 +137,10 @@ nav {
     z-index:2;
 }
 
+.logo {
+    font-family: TheBlacksmith;
+}
+
 /**-- NAV_DESKTOP --**/
 nav #nav_desktop {
     display:block;
@@ -145,7 +159,7 @@ nav #nav_desktop ul li{
     display: inline;
 
     text-align: center;
-    font-size: 3em;
+    font-size: 2.5em;
 
 }
 
@@ -157,16 +171,16 @@ nav #nav_desktop ul li a {
     margin-right: 5%;
 }
 
-nav #nav_desktop ul li a.nav_logo {
+nav #nav_desktop ul li .logo {
     left:0;
     float:left;
     margin-left: 20px;
-    margin-top: 0px;
+    margin-top: 10px;
     padding-right:50px;
 }
 
 nav #nav_desktop ul li a.active {
-    text-decoration: underline;
+    border-bottom: 2px solid white;
 }
 
 
@@ -201,7 +215,7 @@ nav #nav_scroll ul li{
     display: inline;
 
     text-align: center;
-    font-size: 1em;
+    font-size: 1.5em;
 
 }
 
@@ -213,7 +227,7 @@ nav #nav_scroll ul li a {
     margin-right: 5%;
 }
 
-nav #nav_scroll ul li a.nav_logo {
+nav #nav_scroll ul li .logo {
     left:0;
     float:left;
     margin-left: 20px;
@@ -228,6 +242,10 @@ nav #nav_scroll ul li a.active {
 /**-- NAV_MOBILE --**/
 nav #nav_mobile, nav #nav_mobile #nav_mobile_container {
     display:none;
+}
+
+#nav_mobile .logo {
+
 }
 
 #open_nav {
@@ -249,16 +267,22 @@ nav #nav_mobile, nav #nav_mobile #nav_mobile_container {
     float: right;
     right: 0;
     margin-right: 46px;
-    margin-top: 20px;
+    margin-top: -58px;
     z-index: 101;
     transform: rotate(90deg);
 }
 
+#close_nav.index {
+    margin-top: -138px !important;
+}
+
 nav #nav_mobile #nav_mobile_container {
     background-color: rgba(255, 255, 255, 1);
-    height: 100%;
+    height: 100vh;
     width: 100%;
+    top: 0;
     position: fixed;
+    z-index:100;
 }
 
 nav #nav_mobile #nav_mobile_container ul li {
@@ -288,15 +312,33 @@ nav #nav_mobile #nav_mobile_container ul li a.active {
     margin-top: 30vh !important;
 }
 
+#analyzed #fields {
+    height:auto;
+    margin-top: 10vh !important;
+}
+
 #fields input {
     margin: 0 auto;
     padding: 0 3% 0 3%;
     height:65px;
     width:80%;
     border: 1px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
     border-radius: 7px;
     box-shadow: rgba(150, 150, 150, 1);
     background-color: rgba(255, 255, 255, 0.8);
+    margin-top: 30px !important;
+}
+
+#analyzed #fields input {
+    height:30px;
+    width:60%;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    margin-top:10px !important;
+
 }
 
 #fields input:focus{
@@ -304,22 +346,20 @@ nav #nav_mobile #nav_mobile_container ul li a.active {
     outline: none;
     box-shadow: 0 0 5px lightblue;
     -moz-outline-radius: 7px;
-
-
 }
 
 
 #fields input.departure {
-    margin-top:30px;
+
 }
 
 #fields input.destination {
-    margin-top:30px;
+
 }
 
 #fields input[type=submit] {
-    margin-top: 30px;
     background-color: rgba(255, 255, 255, 1);
+    -webkit-appearance: none;
 }
 
 
@@ -327,7 +367,7 @@ nav #nav_mobile #nav_mobile_container ul li a.active {
 
 section {
     height: auto;
-    min-height: 300px;
+    min-height: 40vh;
     width: 100%;
     left: 0;
 }
@@ -335,18 +375,55 @@ section {
 section .content {
     margin: 0 auto;
     width: 720px;
-
+    min-height: 35vh;
 }
+
+/**-- EVAL --**/
 
 section#evaluation {
     background-color:white;
 }
 
-section#map {
-    background-color: #BBDEFB;
+section#evaluation .content{
+    background-color:white;
+    padding: 5vh 10px 5vh 10px;
 }
 
 
+/**-- MAP --**/
+
+section#mapeval {
+    background-color: var(--section-map-color);
+    height:60vh;
+}
+#map {
+    width:100%;
+    height:100%;
+    margin: 0 auto;
+    background-color:transparent;
+    margin-top: -60vh !important;
+    z-index:3;
+}
+
+.overlay {
+    background: transparent;/*rgba(0,255,0,0.2); */
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    z-index:4;
+}
+
+/*****   TABLE   *****/
+.content p{
+    text-align: center;
+}
+
+table{
+    margin: 0 auto;
+    width: 60%;
+    padding: 2% 0 2% 0;
+}
 
 
 /****** MOBILE ******/
@@ -392,6 +469,13 @@ section#map {
         width: 100%;
     }
 
+    .logo {
+        position:absolute;
+        font-size: 2.2em;
+        margin-top:46px;
+        margin-left:50px;
+    }
+
     nav #nav_desktop {
         display:none;
     }
@@ -400,6 +484,25 @@ section#map {
         display:block;
     }
 
+    nav #nav_scroll {
+        display: none !important;
+    }
+
+    #fields {
+        margin-top: 20vh !important;
+    }
+
+    #analyzed #fields input {
+        width:90%;
+        height:40px;
+
+    }
+
+
     /*** SECTIONS ***/
+
+    section .content {
+        width:calc(100% - 20px);
+    }
 
 }

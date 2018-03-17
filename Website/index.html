@@ -1,5 +1,6 @@
 <html>
 <head>
+    <meta charset="utf-8"/>
     <title>Game of Code 2018</title>
     <link rel="stylesheet" type="text/css" href="style/style.css" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -16,28 +17,29 @@
                     <div id="nav_desktop">
 
                         <ul>
-                            <li><a href="" class="nav_logo"><!--<div class="logo"></div>-->LOGO</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">API</a></li>
+                            <li><a href="" class="logo">LetMeArrive</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="api.html">API</a></li>
                             <li><a class="active" href="index.html">Start</a></li>
                         </ul>
 
                     </div>
 
+                    <div class="clear"></div>
 
                     <div id="nav_mobile">
 
-                        <div class="logo"><span style="color: white;">LOGO</span></div>
+                        <div class="logo"><span style="color: white;">LetMeArrive</span></div>
 
                         <div id="open_nav" onclick="open_navigation();">lll</div>
 
-                        <div id="close_nav" onclick="close_navigation();">&times;</div>
+                        <div id="close_nav" class="index" onclick="close_navigation();">&times;</div>
 
                         <div id="nav_mobile_container">
                             <ul>
                                 <li><a class="active" href="index.html">Start</a></li>
-                                <li><a href="#">API</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="api.html">API</a></li>
+                                <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </div>
 
@@ -50,8 +52,8 @@
 
                     <form method="post" action="start">
 
-                        <input type="text" name="departure" class="departure" placeholder="Departure"/><br>
-                        <input type="text" name="destination" class="destination" placeholder="Destination"><br>
+                        <input type="text" name="departure" id="autocomplete" onFocus="geolocate()" class="departure" placeholder="Departure"/><br>
+                        <input type="text" name="destination" id="autocomplete" onFocus="geolocate()" class="destination" placeholder="Destination"><br>
                         <input type="submit" name="submit" value="Start" />
 
                     </form>
@@ -66,6 +68,7 @@
 
 <!-- SCRIPTS -->
 <script src="scripts/navigation.js"></script>
+<scirpt src="scripts/autocomplete_field.js"></scirpt>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0klnwhWakNF6e3pkI2hkYGvu-By8CZ7I&callback=initMapindex" async defer></script>
 </body>
 </html>
