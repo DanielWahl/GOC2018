@@ -5,12 +5,9 @@
  * Date: 17.03.2018
  * Time: 00:47
  */
-
-<<<<<<< HEAD
-=======
 header("Content-Type: application/json");
 
->>>>>>> master
+
 if(!isset($_POST["start_lng"]) || !isset($_POST["start_lat"]) || !isset($_POST["dest_lng"]) || !isset($_POST["dest_lat"])) {
 
     echo "ERROR";
