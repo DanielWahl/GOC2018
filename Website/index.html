@@ -61,6 +61,16 @@
 
                 <div id="fields">
 
+<<<<<<< HEAD
+                    <form method="post" action="API/utils/getTransports.php">
+
+                        <input type="text" name="departure" id="autocomplete" onFocus="geolocate()" class="departure" placeholder="Departure"/><br>
+                        <input type="text" name="destination" id="autocomplete2" onFocus="geolocate()" class="destination" placeholder="Destination"><br>
+                        <input type="hidden" name="latdep" id="latdep" />
+                        <input type="hidden" name="lngdep" id="lngdep" />
+                        <input type="hidden" name="latdes" id="latdes" />
+                        <input type="hidden" name="lngdes" id="lngdes" />
+=======
                     <form method="POST" action="." onsubmit="event.preventDefault(); loadValues();">
 
                         <input type="text" name="departure" id="autocomplete" onFocus="geolocate()" class="departure" placeholder="Departure"/><br>
@@ -69,6 +79,7 @@
                         <input type="hidden" name="start_lng" id="start_lng" />
                         <input type="hidden" name="dest_lat" id="dest_lat" />
                         <input type="hidden" name="dest_lng" id="dest_lng" />
+>>>>>>> master
 
                         <input type="submit" name="submit" value="Start" />
 
