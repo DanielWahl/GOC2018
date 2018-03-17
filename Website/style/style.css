@@ -267,9 +267,13 @@ nav #nav_mobile, nav #nav_mobile #nav_mobile_container {
     float: right;
     right: 0;
     margin-right: 46px;
-    margin-top: 20px;
+    margin-top: -58px;
     z-index: 101;
     transform: rotate(90deg);
+}
+
+#close_nav.index {
+    margin-top: -138px !important;
 }
 
 nav #nav_mobile #nav_mobile_container {
@@ -381,7 +385,7 @@ section#evaluation {
 
 section#evaluation .content{
     background-color:white;
-    padding-top: 5vh;
+    padding: 5vh 10px 5vh 10px;
 }
 
 
@@ -395,14 +399,13 @@ section#mapeval {
     width:100%;
     height:100%;
     margin: 0 auto;
-    background-color:green;
-    margin-top:-60vh !important;
+    background-color:transparent;
+    margin-top: -60vh !important;
     z-index:3;
-    margin-left: 5px;
 }
 
 .overlay {
-    background: red;/*rgba(0,255,0,0.2); */
+    background: transparent;/*rgba(0,255,0,0.2); */
     position: relative;
     width: 100%;
     height: 100%;
@@ -410,7 +413,16 @@ section#mapeval {
     z-index:4;
 }
 
+/*****   TABLE   *****/
+.content p{
+    text-align: center;
+}
 
+table{
+    margin: 0 auto;
+    width: 60%;
+    padding: 2% 0 2% 0;
+}
 
 
 /****** MOBILE ******/
@@ -487,5 +499,9 @@ section#mapeval {
 
 
     /*** SECTIONS ***/
+
+    section .content {
+        width:calc(100% - 20px);
+    }
 
 }
