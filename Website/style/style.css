@@ -596,6 +596,14 @@ footer .content {
 
     }
 
+    footer {
+        height: auto;
+    }
+    footer .content {
+        width: 80%;
+        height:auto;
+    }
+
 
     /*** SECTIONS ***/
 
