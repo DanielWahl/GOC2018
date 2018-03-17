@@ -15,6 +15,9 @@ function close_navigation() {
 function changeTemplate() {
     $('#loading_overlay').show();
 
+}
+
+function httpRequestLoaded() {
     $('section').fadeIn();
     $("header").fadeIn("slow", function() {
         $(this).addClass("analyzed");

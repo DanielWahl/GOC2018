@@ -26,6 +26,8 @@ function loadValues() {
 
         let response = JSON.parse(e.target.response);
 
+        httpRequestLoaded();
+
         console.log(response);
 
         /*console.log("Walk");
