@@ -12,7 +12,16 @@ function close_navigation() {
     $('#close_nav').css('display', 'none');
 }
 
+function changeTemplate() {
+    $('section').fadeIn();
+    $("header").fadeIn("slow", function() {
+        $(this).addClass("analyzed");
+    });
+    $("#close_nav").addClass("index");
+}
+
 $(document).ready(function(){
+
     var scrollTop = 0;
     $(window).scroll(function(){
         scrollTop = $(window).scrollTop();

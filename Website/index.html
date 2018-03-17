@@ -25,7 +25,17 @@
 
                     </div>
 
-                    <div class="clear"></div>
+
+                    <div id="nav_scroll">
+
+                        <ul>
+                            <li><a href="" class="logo">LetMeArrive</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="api.html">API</a></li>
+                            <li><a class="active" href="index.html">Start</a></li>
+                        </ul>
+
+                    </div>
 
                     <div id="nav_mobile">
 
@@ -33,7 +43,7 @@
 
                         <div id="open_nav" onclick="open_navigation();">lll</div>
 
-                        <div id="close_nav" class="index" onclick="close_navigation();">&times;</div>
+                        <div id="close_nav"  onclick="close_navigation();">&times;</div>
 
                         <div id="nav_mobile_container">
                             <ul>
@@ -50,6 +60,7 @@
 
                 <div id="fields">
 
+<<<<<<< HEAD
                     <form method="post" action="API/utils/getTransports.php">
 
                         <input type="text" name="departure" id="autocomplete" onFocus="geolocate()" class="departure" placeholder="Departure"/><br>
@@ -58,16 +69,109 @@
                         <input type="hidden" name="lngdep" id="lngdep" />
                         <input type="hidden" name="latdes" id="latdes" />
                         <input type="hidden" name="lngdes" id="lngdes" />
+=======
+                    <form method="POST" action="." onsubmit="event.preventDefault(); loadValues();">
+
+                        <input type="text" name="departure" id="autocomplete" onFocus="geolocate()" class="departure" placeholder="Departure"/><br>
+                        <input type="text" name="destination" id="autocomplete2" onFocus="geolocate()" class="destination" placeholder="Destination"><br>
+                        <input type="hidden" name="start_lat" id="start_lat" />
+                        <input type="hidden" name="start_lng" id="start_lng" />
+                        <input type="hidden" name="dest_lat" id="dest_lat" />
+                        <input type="hidden" name="dest_lng" id="dest_lng" />
+>>>>>>> master
 
                         <input type="submit" name="submit" value="Start" />
 
                     </form>
 
-
                 </div>
             </div>
         </div>
     </header>
+
+
+    <div class="clear"></div>
+
+
+    <section id="evaluation">
+
+       <!-- <script>
+
+            function getTransports(start_lat, start_lng, dest_lat, dest_lng) {
+                let xml = new XMLHttpRequest();
+                xml.open("POST", "API/getTransports.php");
+
+                xml.addEventListener("load", (e) => {
+                    console.log(JSON.parse(e.target.response));
+
+                });
+
+                let data = new FormData();
+
+                data.append("start_lng", start_lat);
+                data.append("start_lat", start_lng);
+                data.append("dest_lng", dest_lng);
+                data.append("dest_lat", dest_lat);
+
+                xml.send(data);
+
+
+            }
+
+            const START_LAT = "" + <?php echo $_POST['start_lat']; ?>;
+            const START_LNG = "" + <?php echo $_POST['start_lng']; ?>;
+            const DEST_LAT  = "" + <?php echo $_POST['dest_lat'];  ?>;
+            const DEST_LNG  = "" + <?php echo $_POST['dest_lng'];  ?>;
+
+            addEventListener("load", ()=> {
+                getTransports(START_LAT, START_LNG, DEST_LAT, DEST_LNG);
+            });
+
+
+
+        </script>-->
+
+        <div class="content">
+            <span id="testresult"></span>
+            <p>
+                Dier braucht mam:<br>
+            <table>
+                <tr>
+                    <th>Bus</th>
+                    <td>x min</td>
+                    <td>x km</td>
+                </tr>
+                <tr>
+                    <th>Véloh</th>
+                    <td>x min</td>
+                    <td>x km</td>
+                </tr>
+                <tr>
+                    <th>Auto</th>
+                    <td>x min</td>
+                    <td>x km</td>
+                </tr>
+            </table>
+            </p>
+        </div>
+
+    </section>
+
+
+    <div class="clear"></div>
+
+
+    <section id="mapeval">
+
+        <div class="content">
+
+            <div class="overlay" onClick="style.pointerEvents='none';"></div>
+            <div id="map"></div>
+            <div class="clear"></div>
+
+        </div>
+
+    </section>
 
 </div>
 

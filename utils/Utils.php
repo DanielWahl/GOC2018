@@ -24,6 +24,7 @@ function PythagorasBlaaa($lat1, $lng1, $lat2, $lng2) {
 
 }
 
+
 function parseFloat($value) {
     return floatval(preg_replace('#^([-]*[0-9\.,\' ]+?)((\.|,){1}([0-9-]{1,3}))*$#e', "str_replace(array('.', ',', \"'\", ' '), '', '\\1') . '.\\4'", $value));
 }
