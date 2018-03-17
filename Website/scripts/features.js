@@ -47,16 +47,16 @@ function loadValues() {
         console.log(response.veloh[3].duration + "s");
         console.log(response.veloh[3].distance + "m");*/
 
-        let busdist     = response.bus.distance;
+        let busdist     = +((response.bus.distance).toFixed(2));
         let bustime     = Math.round(response.bus.time);
         let busprice    = 2;
-        let velohdist   = (response.veloh[1].distance + response.veloh[2].distance + response.veloh[3].distance)/1000;
+        let velohdist   = +(((response.veloh[1].distance + response.veloh[2].distance + response.veloh[3].distance)/1000).toFixed(2));
         let velohtime   = Math.round((response.veloh[1].duration + response.veloh[2].duration + response.veloh[3].duration)/60);
         let velohprice  = 0;
-        let cardist     = response.car[1].distance/1000;
+        let cardist     = +((response.car[1].distance/1000).toFixed(2));
         let cartime     = Math.round(response.car[1].duration/60);
         let carprice    = +(((8*cardist/100)*1.1).toFixed(2)); //8 is the average fuel used by a car for every 100 km, 1.1 is the average fuel price per liter
-        let persondist  = response.walk[1].distance/1000;
+        let persondist  = +((response.walk[1].distance/1000).toFixed(2));
         let persontime  = Math.round(response.walk[1].duration/60);
         let personprice = 0;
 
