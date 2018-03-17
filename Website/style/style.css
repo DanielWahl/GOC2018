@@ -76,9 +76,11 @@ h2 {
 
 #loading_spinner {
     background-image: url('../images/blank.gif');
-    height:50px;
-    width: auto;
-    margin-top:45vh;
+    height:20px;
+    width: 160px;
+    margin: 0 auto;
+    margin-top:45vh !important;
+
 }
 
 
@@ -484,6 +486,23 @@ table tr, table td , table th {
 
 table td {
     width: 25%;
+}
+
+
+
+/*****   FOOTER   *****/
+
+footer {
+    left: 0;
+    height:150px;
+    width: 100%;
+    background-color:lightgray;
+    display:none;
+}
+
+footer .content {
+    margin: 0 auto;
+    width: 720px;
 }
 
 
