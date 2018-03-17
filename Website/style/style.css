@@ -372,6 +372,10 @@ nav #nav_mobile #nav_mobile_container ul li a.active {
 
 }
 
+input[type="submit"]:hover {
+    cursor: pointer;
+}
+
 #fields input:focus{
     /*outline-color: lightblue;*/
     outline: none;
@@ -512,7 +516,6 @@ footer {
 footer .content {
 
     margin: 0 auto;
-    margin-top:20% !important;
     width: 720px;
     height: auto;
 }
@@ -598,6 +601,9 @@ footer .content {
 
     footer {
         height: auto;
+        position: absolute;
+        bottom: 0;
+        left: 0;
     }
     footer .content {
         width: 80%;
