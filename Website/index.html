@@ -18,8 +18,8 @@
 
                         <ul>
                             <li><a href="" class="logo">LetMeArrive</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="analyzed.html">API</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="api.html">API</a></li>
                             <li><a class="active" href="index.html">Start</a></li>
                         </ul>
 
@@ -38,8 +38,8 @@
                         <div id="nav_mobile_container">
                             <ul>
                                 <li><a class="active" href="index.html">Start</a></li>
-                                <li><a href="analyzed.html">API</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="api.html">API</a></li>
+                                <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </div>
 
@@ -50,10 +50,15 @@
 
                 <div id="fields">
 
-                    <form method="post" action="start">
+                    <form method="post">
 
-                        <input type="text" name="departure" class="departure" placeholder="Departure"/><br>
-                        <input type="text" name="destination" class="destination" placeholder="Destination"><br>
+                        <input type="text" name="departure" id="autocomplete" onFocus="geolocate()" class="departure" placeholder="Departure"/><br>
+                        <input type="text" name="destination" id="autocomplete2" onFocus="geolocate()" class="destination" placeholder="Destination"><br>
+                        <input type="hidden" name="latdep" id="latdep" />
+                        <input type="hidden" name="lngdep" id="lngdep" />
+                        <input type="hidden" name="latdes" id="latdes" />
+                        <input type="hidden" name="lngdes" id="lngdes" />
+
                         <input type="submit" name="submit" value="Start" />
 
                     </form>
@@ -68,6 +73,8 @@
 
 <!-- SCRIPTS -->
 <script src="scripts/navigation.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0klnwhWakNF6e3pkI2hkYGvu-By8CZ7I&callback=initMapindex" async defer></script>
+<script src="scripts/autocomplete_field.js"></script>
+<script src="scripts/features.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0klnwhWakNF6e3pkI2hkYGvu-By8CZ7I&libraries=places&callback=initAutocomplete" async defer></script>
 </body>
 </html>
