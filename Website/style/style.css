@@ -152,6 +152,10 @@ header #h_overlay #resize_content {
     margin: 0 auto;
 }
 
+header.notindex {
+    height: 80vh;
+}
+
 
 
 /*****    NAVIGATION   *****/
@@ -448,6 +452,9 @@ section#mapeval {
 
 section#api {
     background-color: var(--section-eval-color);
+    display: block;
+    height:30vh;
+    min-height:20vh;
 }
 
 section#api .content {
@@ -459,6 +466,9 @@ section#api .content {
 
 section#contact {
     background-color: var(--section-eval-color);
+    display: block;
+    height:30vh;
+    min-height:20vh;
 }
 
 section#contact .content {
@@ -494,15 +504,18 @@ table td {
 
 footer {
     left: 0;
-    height:150px;
+    height:100px;
     width: 100%;
     background-color:lightgray;
     display:none;
 }
 
 footer .content {
+
     margin: 0 auto;
+    margin-top:20% !important;
     width: 720px;
+    max-height: 80%;
 }
 
 
