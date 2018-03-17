@@ -34,10 +34,13 @@ $car = getTransportCar($start_lat, $start_lng, $dest_lat, $dest_lng);
 
 $walk = getTransportWalking($start_lat, $start_lng, $dest_lat, $dest_lng);
 
+$bus = getTransportBus($start_lat, $start_lng, $dest_lat, $dest_lng);
+
 $output = [
     "veloh" => $veloh,
     "car" => $car,
-    "walk" => $walk
+    "walk" => $walk,
+    "bus" => $bus
 ];
 
 
