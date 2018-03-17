@@ -84,42 +84,6 @@
 
     <section id="evaluation">
 
-       <!-- <script>
-
-            function getTransports(start_lat, start_lng, dest_lat, dest_lng) {
-                let xml = new XMLHttpRequest();
-                xml.open("POST", "API/getTransports.php");
-
-                xml.addEventListener("load", (e) => {
-                    console.log(JSON.parse(e.target.response));
-
-                });
-
-                let data = new FormData();
-
-                data.append("start_lng", start_lat);
-                data.append("start_lat", start_lng);
-                data.append("dest_lng", dest_lng);
-                data.append("dest_lat", dest_lat);
-
-                xml.send(data);
-
-
-            }
-
-            const START_LAT = "" + <?php echo $_POST['start_lat']; ?>;
-            const START_LNG = "" + <?php echo $_POST['start_lng']; ?>;
-            const DEST_LAT  = "" + <?php echo $_POST['dest_lat'];  ?>;
-            const DEST_LNG  = "" + <?php echo $_POST['dest_lng'];  ?>;
-
-            addEventListener("load", ()=> {
-                getTransports(START_LAT, START_LNG, DEST_LAT, DEST_LNG);
-            });
-
-
-
-        </script>-->
-
         <div class="content">
             <span id="testresult"></span>
             <p>
@@ -127,18 +91,18 @@
             <table>
                 <tr>
                     <th>Bus</th>
-                    <td>x min</td>
-                    <td>x km</td>
+                    <td><span id="bus_zeit"></span> min</td>
+                    <td><span id="bus_distance"></span> km</td>
                 </tr>
                 <tr>
                     <th>Véloh</th>
-                    <td>x min</td>
-                    <td>x km</td>
+                    <td><span id="veloh_zeit"></span> min</td>
+                    <td><span id="veloh_distance"></span> km</td>
                 </tr>
                 <tr>
                     <th>Auto</th>
-                    <td>x min</td>
-                    <td>x km</td>
+                    <td><span id="auto_zeit"></span> min</td>
+                    <td><span id="auto_distance"></span> km</td>
                 </tr>
             </table>
             </p>
@@ -168,6 +132,6 @@
 <script src="scripts/navigation.js"></script>
 <script src="scripts/autocomplete_field.js"></script>
 <script src="scripts/features.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0klnwhWakNF6e3pkI2hkYGvu-By8CZ7I&libraries=places&callback=initAutocomplete" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRPX6aEyQnpB8rKvlP_yFhyPO_x46beAs&libraries=places&callback=initAutocomplete" async defer></script>
 </body>
 </html>

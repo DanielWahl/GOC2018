@@ -23,7 +23,11 @@ function loadValues() {
 
     xml.onload = (e) => {
 
-        console.log(JSON.parse(e.target.response));
+        let response = JSON.parse(e.target.response);
+
+        console.log(response);
+
+
 
     };
 
