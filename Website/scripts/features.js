@@ -6,3 +6,4 @@ function checkInputs() {
     return ((autocomplete === undefined || autocomplete === null || autocomplete === "") ||
     (autocomplete2 === undefined || autocomplete2 === null || autocomplete2 === ""));
 }
+

@@ -79,7 +79,44 @@
 
     <section id="evaluation">
 
+        <script>
+
+            function getTransports(start_lat, start_lng, dest_lat, dest_lng) {
+                let xml = new XMLHttpRequest();
+                xml.open("POST", "API/getTransports.php");
+
+                xml.addEventListener("load", (e) => {
+                    console.log(JSON.parse(e.target.response));
+
+                });
+
+                let data = new FormData();
+
+                data.append("start_lng", start_lat);
+                data.append("start_lat", start_lng);
+                data.append("dest_lng", dest_lng);
+                data.append("dest_lat", dest_lat);
+
+                xml.send(data);
+
+
+            }
+
+            const START_LAT = "" + <?php echo $_POST['start_lat']; ?>;
+            const START_LNG = "" + <?php echo $_POST['start_lng']; ?>;
+            const DEST_LAT  = "" + <?php echo $_POST['dest_lat'];  ?>;
+            const DEST_LNG  = "" + <?php echo $_POST['dest_lng'];  ?>;
+
+            addEventListener("load", ()=> {
+                getTransports(START_LAT, START_LNG, DEST_LAT, DEST_LNG);
+            });
+
+
+
+        </script>
+
         <div class="content">
+            <span id="testresult"></span>
             <p>
                 Dier braucht mam:<br>
                 <table>
