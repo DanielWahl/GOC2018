@@ -8,6 +8,7 @@
 
 header("Content-Type: application/json");
 
+
 if(!isset($_POST["start_lng"]) || !isset($_POST["start_lat"]) || !isset($_POST["dest_lng"]) || !isset($_POST["dest_lat"])) {
 
     echo "ERROR";

@@ -6,7 +6,9 @@
  * Time: 20:22
  */
 
+
 header("Content-Type: application/json");
+
 
 if(!isset($_POST["start_lng"])
     || !isset($_POST["start_lat"])
