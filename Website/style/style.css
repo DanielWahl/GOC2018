@@ -515,7 +515,7 @@ footer .content {
     margin: 0 auto;
     margin-top:20% !important;
     width: 720px;
-    max-height: 80%;
+    height: auto;
 }
 
 
