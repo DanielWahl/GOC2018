@@ -7,3 +7,10 @@ function checkInputs() {
     (autocomplete2 === undefined || autocomplete2 === null || autocomplete2 === ""));
 }
 
+function loadValues() {
+
+
+
+
+    return false;
+}
