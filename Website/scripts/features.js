@@ -58,6 +58,12 @@ function loadValues() {
         let persontime  = Math.round(response.walk[1].duration/60);
         let personprice = 0;
 
+        if(velohtime>30 && velohtime<=90) velohprice = 1;
+        else if(velohtime>90 && velohtime<=150) velohprice = 2;
+        else if(velohtime>150 && velohtime<=210) velohprice = 3;
+        else if(velohtime>210 && velohtime<=270) velohprice = 4;
+        else if(velohprice>270) velohprice = 5;
+
         let content = "<span id='testresult'></span>"+
         "<p>"+
         "Dier braucht mam:<br></p>"+
