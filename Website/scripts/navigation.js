@@ -13,11 +13,16 @@ function close_navigation() {
 }
 
 function changeTemplate() {
+    $('#loading_overlay').show();
+
     $('section').fadeIn();
     $("header").fadeIn("slow", function() {
         $(this).addClass("analyzed");
     });
     $("#close_nav").addClass("index");
+
+
+    $('#loading_overlay').hide();
 }
 
 $(document).ready(function(){
