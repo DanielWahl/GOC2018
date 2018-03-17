@@ -13,20 +13,11 @@ function close_navigation() {
 }
 
 function changeTemplate() {
-
-    let overlay = $('#loading_overlay');
-    //overlay.show();
-
     $('section').fadeIn();
     $("header").fadeIn("slow", function() {
         $(this).addClass("analyzed");
     });
     $("#close_nav").addClass("index");
-
-    setTimeout(afterTwoSeconds, 2000);
-
-    //overlay.css("display", "none");
-
 }
 
 $(document).ready(function(){
