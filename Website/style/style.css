@@ -400,7 +400,7 @@ nav #nav_mobile #nav_mobile_container ul li a.active {
 
 section {
     height: auto;
-    min-height: 40vh;
+    min-height: 250px;
     width: 100%;
     left: 0;
     display:none;
@@ -409,7 +409,7 @@ section {
 section .content {
     margin: 0 auto;
     width: 720px;
-    min-height: 35vh;
+    min-height:100px;
 }
 
 /**-- EVAL --**/
@@ -453,8 +453,7 @@ section#mapeval {
 section#api {
     background-color: var(--section-eval-color);
     display: block;
-    height:30vh;
-    min-height:20vh;
+    height:250px;
 }
 
 section#api .content {
@@ -467,8 +466,8 @@ section#api .content {
 section#contact {
     background-color: var(--section-eval-color);
     display: block;
-    height:30vh;
-    min-height:20vh;
+    height:250px;
+
 }
 
 section#contact .content {

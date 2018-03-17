@@ -55,7 +55,7 @@ function loadValues() {
         let velohprice  = 0;
         let cardist     = response.car[1].distance/1000;
         let cartime     = Math.round(response.car[1].duration/60);
-        let carprice    = Math.round((8*cardist/100)*1.1); //8 is the average fuel used by a car for every 100 km, 1.1 is the average fuel price per liter
+        let carprice    = +(((8*cardist/100)*1.1).toFixed(2)); //8 is the average fuel used by a car for every 100 km, 1.1 is the average fuel price per liter
         let persondist  = response.walk[1].distance/1000;
         let persontime  = Math.round(response.walk[1].duration/60);
         let personprice = 0;
@@ -86,10 +86,10 @@ function loadValues() {
         "       <th><img src='images/auto.svg' style='height:auto;width:60px'></th>"+
         "       <td><span id='auto_zeit'></span>" + cartime + " min</td>"+
         "       <td><span id='auto_distance'></span>" + cardist + " km</td>"+
-        "       <td><span id='auto_price'></span>" + carprice + " €</td>"+
+        "       <td><span id='auto_price'></span> ~" + carprice + " €</td>"+
         "   </tr>"+
         "   <tr>"+
-        "       <th><img src='images/person.svg' style='height:70px;width:auto'></th>"+
+        "       <th><img src='images/person.svg' style='height:70px;~width:auto'></th>"+
         "       <td><span id='person_zeit'></span>" + persontime + " min</td>"+
         "       <td><span id='person_distance'></span>" + persondist + " km</td>"+
         "       <td><span id='person_price'></span>" + personprice + " €</td>"+
