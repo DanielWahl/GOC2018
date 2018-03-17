@@ -450,8 +450,17 @@ section#contact .content {
 
 table {
     margin: 0 auto;
-    width: 60%;
+    width: 100%;
     padding: 2% 0 2% 0;
+    border-collapse: collapse;
+}
+
+table tr, table td , table th {
+    border-bottom: 1px solid #abcdef;
+}
+
+table td {
+    width: 33.3%;
 }
 
 
