@@ -9,15 +9,17 @@ function checkInputs() {
 
 function loadValues() {
 
-    if(document.getElementById("start_lat").value === undefined) return false;
-    if(document.getElementById("start_lng").value === undefined) return false;
-    if(document.getElementById("dest__lat").value === undefined) return false;
-    if(document.getElementById("dest_lng").value === undefined) return false;
 
+    if(document.getElementById("start_lat").value === "") return false;
+    if(document.getElementById("start_lng").value === "") return false;
+    if(document.getElementById("dest_lat").value === "") return false;
+    if(document.getElementById("dest_lng").value === "") return false;
+
+    changeTemplate();
 
     let xml = new XMLHttpRequest();
 
-    xml.open("POST", "API/getTransports.php");
+    xml.open("POST", "../API/getTransports.php");
 
     xml.onload = (e) => {
 
@@ -32,7 +34,6 @@ function loadValues() {
     data.append("dest_lat", document.getElementById("dest_lat").value);
     data.append("dest_lng", document.getElementById("dest_lng").value);
     xml.send(data);
-
 
     return false;
 }

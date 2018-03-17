@@ -50,7 +50,7 @@
 
                 <div id="fields">
 
-                    <form onsubmit="return loadValues();">
+                    <form method="POST" action="." onsubmit="event.preventDefault(); loadValues();">
 
                         <input type="text" name="departure" id="autocomplete" onFocus="geolocate()" class="departure" placeholder="Departure"/><br>
                         <input type="text" name="destination" id="autocomplete2" onFocus="geolocate()" class="destination" placeholder="Destination"><br>

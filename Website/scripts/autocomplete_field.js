@@ -35,7 +35,7 @@ function initAutocomplete() {
         console.log(lat + " " + lng);
         document.getElementById("start_lat").value = lat;
         document.getElementById("start_lng").value = lng;
-        fillInAddress(place);
+        //fillInAddress(place);
     });
 
     google.maps.event.addListener(autocomplete2, 'place_changed', function() {
@@ -45,11 +45,11 @@ function initAutocomplete() {
         console.log(latdes + " " + lngdes);
         document.getElementById("dest_lat").value = latdes;
         document.getElementById("dest_lng").value = lngdes;
-        fillInAddress(placedes);
+        //fillInAddress(placedes);
     });
     // When the user selects an address from the dropdown, populate the address
     // fields in the form.
-    autocomplete.addListener('place_changed', fillInAddress);
+    //autocomplete.addListener('place_changed', fillInAddress);
 }
 
 function fillInAddress(place) {
