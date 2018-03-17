@@ -13,7 +13,6 @@ if(!isset($_POST["start_lng"]) || !isset($_POST["start_lat"]) || !isset($_POST["
 
 }
 
-
 $start_lng = $_POST["start_lng"];
 $start_lat = $_POST["start_lat"];
 $dest_lng = $_POST["dest_lng"];
