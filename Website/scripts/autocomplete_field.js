@@ -5,14 +5,15 @@
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-var placeSearch, autocomplete;
+var placeSearch, autocomplete, autocomplete2;
 var componentForm = {
     street_number: 'short_name',
     route: 'long_name',
     locality: 'long_name',
     administrative_area_level_1: 'short_name',
     country: 'long_name',
-    postal_code: 'short_name'
+    postal_code: 'short_name',
+    lat: ''
 };
 
 function initAutocomplete() {
@@ -20,16 +21,40 @@ function initAutocomplete() {
     // location types.
     autocomplete = new google.maps.places.Autocomplete(
         /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-        {types: ['geocode']});
+        { types: ['geocode'] });
 
+    autocomplete2 = new google.maps.places.Autocomplete(
+        document.getElementById('autocomplete2'),
+        { types: [ 'geocode' ] });
+
+
+    google.maps.event.addListener(autocomplete, 'place_changed', function() {
+        let place = autocomplete.getPlace();
+        let lat = place.geometry.location.lat();
+        let lng = place.geometry.location.lng();
+        console.log(lat + " " + lng);
+        document.getElementById("latdep").value = lat;
+        document.getElementById("lngdep").value = lng;
+        fillInAddress(place);
+    });
+
+    google.maps.event.addListener(autocomplete2, 'place_changed', function() {
+        let placedes = autocomplete2.getPlace();
+        let latdes = placedes.geometry.location.lat();
+        let lngdes = placedes.geometry.location.lng();
+        console.log(latdes + " " + lngdes);
+        document.getElementById("latdes").value = latdes;
+        document.getElementById("lngdes").value = lngdes;
+        fillInAddress(placedes);
+    });
     // When the user selects an address from the dropdown, populate the address
     // fields in the form.
     autocomplete.addListener('place_changed', fillInAddress);
 }
 
-function fillInAddress() {
+function fillInAddress(place) {
     // Get the place details from the autocomplete object.
-    var place = autocomplete.getPlace();
+
 
     for (var component in componentForm) {
         document.getElementById(component).value = '';
@@ -43,6 +68,7 @@ function fillInAddress() {
         if (componentForm[addressType]) {
             var val = place.address_components[i][componentForm[addressType]];
             document.getElementById(addressType).value = val;
+
         }
     }
 }
