@@ -149,6 +149,6 @@ function getTransportBus($start_lat, $start_lng, $dest_lat, $dest_lng){
         'distance' => floor($stats->rows[0]->elements[0]->distance->value / 1000)
     ];
 
-    echo json_encode($output);
+    return $output;
 }
 
