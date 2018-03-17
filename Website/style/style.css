@@ -74,6 +74,13 @@ h2 {
     position:fixed;
 }
 
+#loading_spinner {
+    background-image: url('../images/blank.gif');
+    height:50px;
+    width: auto;
+    margin-top:45vh;
+}
+
 
 
 
