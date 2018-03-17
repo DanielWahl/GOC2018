@@ -26,9 +26,9 @@ function loadValues() {
 
         let response = JSON.parse(e.target.response);
 
-        /*console.log(response);
+        console.log(response);
 
-        console.log("Walk");
+        /*console.log("Walk");
         console.log(response.walk[1].duration + "s");
         console.log(response.walk[1].distance + "m");
         console.log("Car");
@@ -45,8 +45,8 @@ function loadValues() {
         console.log(response.veloh[3].duration + "s");
         console.log(response.veloh[3].distance + "m");*/
 
-        let busdist     = 0;
-        let bustime     = Math.round(0);
+        let busdist     = response.bus.distance;
+        let bustime     = Math.round(response.bus.time);
         let velohdist   = (response.veloh[1].distance + response.veloh[2].distance + response.veloh[3].distance)/1000;
         let velohtime   = Math.round((response.veloh[1].duration + response.veloh[2].duration + response.veloh[3].duration)/60);
         let cardist     = response.car[1].distance/1000;
@@ -80,7 +80,7 @@ function loadValues() {
         "   </tr>"+
         "</table>";
 
-        $('#result').append(content);
+        $('#result').html(content);
 
     };
 
