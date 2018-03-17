@@ -18,7 +18,7 @@
 
         function getTransports() {
             let xml = new XMLHttpRequest();
-            xml.open("POST", "../utils/getTransports.php");
+            xml.open("POST", "../API/getTransports.php");
 
             xml.addEventListener("load", (e) => {
                 console.log(JSON.parse(e.target.response));
