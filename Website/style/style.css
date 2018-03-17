@@ -74,6 +74,15 @@ h2 {
     position:fixed;
 }
 
+#loading_spinner {
+    background-image: url('../images/blank.gif');
+    height:20px;
+    width: 160px;
+    margin: 0 auto;
+    margin-top:45vh !important;
+
+}
+
 
 
 
@@ -141,6 +150,10 @@ header.analyzed #h_overlay {
 header #h_overlay #resize_content {
     width: 820px;
     margin: 0 auto;
+}
+
+header.notindex {
+    height: 80vh;
 }
 
 
@@ -439,6 +452,9 @@ section#mapeval {
 
 section#api {
     background-color: var(--section-eval-color);
+    display: block;
+    height:30vh;
+    min-height:20vh;
 }
 
 section#api .content {
@@ -450,6 +466,9 @@ section#api .content {
 
 section#contact {
     background-color: var(--section-eval-color);
+    display: block;
+    height:30vh;
+    min-height:20vh;
 }
 
 section#contact .content {
@@ -476,7 +495,27 @@ table tr, table td , table th {
 }
 
 table td {
-    width: 33.3%;
+    width: 25%;
+}
+
+
+
+/*****   FOOTER   *****/
+
+footer {
+    left: 0;
+    height:100px;
+    width: 100%;
+    background-color:lightgray;
+    display:none;
+}
+
+footer .content {
+
+    margin: 0 auto;
+    margin-top:20% !important;
+    width: 720px;
+    height: auto;
 }
 
 

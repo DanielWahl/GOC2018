@@ -19,6 +19,7 @@ function changeTemplate() {
 
 function httpRequestLoaded() {
     $('section').fadeIn();
+    $('footer').fadeIn();
     $("header").fadeIn("slow", function() {
         $(this).addClass("analyzed");
     });
