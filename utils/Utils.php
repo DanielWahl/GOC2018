@@ -85,7 +85,10 @@ function getTransportVeloh($start_lat, $start_lng, $dest_lat, $dest_lng) {
     $way_with_bicycle   = json_decode(file_get_contents("http://maps.googleapis.com/maps/api/distancematrix/json?origins=" . $start_loc->position->lat . "," . $start_loc->position->lng . "&destinations=" . $dest_loc->position->lat . "," . $dest_loc->position->lng . "&mode=bicycling"));
 
     $way_to_dest        = json_decode(file_get_contents("http://maps.googleapis.com/maps/api/distancematrix/json?origins=" . $dest_loc->position->lat . "," . $dest_loc->position->lng . "&destinations=" . $dest_lat . "," . $dest_lng . "&mode=walking"));
-
+/*
+    $output_string = json_encode($way_to_start);
+    $output_string.= json_encode($way_with_bicycle);
+    $output_string .= json_encode($way_to_dest);*/
 
 // create output
     $output = [];
@@ -93,13 +96,13 @@ function getTransportVeloh($start_lat, $start_lng, $dest_lat, $dest_lng) {
     $output[] = Location("OK","Start", floatval($start_lat), floatval($start_lng), $way_to_start->origin_addresses[0]);
 
     $infos = $way_to_start->rows[0]->elements[0];
-    $output[] = Location($way_to_start->status ,$start_loc->name, $start_loc->position->lat, $start_loc->position->lng, $start_loc->address, "walking", $infos->distance->value, $infos->duration->value);
+    $output[] = Location($way_to_start->status ,$start_loc->name, $start_loc->position->lat, $start_loc->position->lng, $start_loc->address, "walking", $infos->duration->value, $infos->distance->value);
 
     $infos = $way_with_bicycle->rows[0]->elements[0];
-    $output[] = Location($way_with_bicycle->status,$dest_loc->name, $dest_loc->position->lat, $dest_loc->position->lng, $dest_loc->address, "bicycling", $infos->distance->value, $infos->duration->value);
+    $output[] = Location($way_with_bicycle->status,$dest_loc->name, $dest_loc->position->lat, $dest_loc->position->lng, $dest_loc->address, "bicycling", $infos->duration->value, $infos->distance->value);
 
     $infos = $way_to_dest->rows[0]->elements[0];
-    $output[] = Location($way_to_dest->status,"Destination", floatval($dest_lat), floatval($dest_lng), $way_to_dest->destination_addresses[0], "walking", $infos->distance->value, $infos->duration->value);
+    $output[] = Location($way_to_dest->status,"Destination", floatval($dest_lat), floatval($dest_lng), $way_to_dest->destination_addresses[0], "walking", $infos->duration->value, $infos->distance->value);
 
     return $output;
 }
