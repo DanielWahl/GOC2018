@@ -9,7 +9,29 @@ function checkInputs() {
 
 function loadValues() {
 
+    if(document.getElementById("start_lat").value === undefined) return false;
+    if(document.getElementById("start_lng").value === undefined) return false;
+    if(document.getElementById("dest__lat").value === undefined) return false;
+    if(document.getElementById("dest_lng").value === undefined) return false;
 
+
+    let xml = new XMLHttpRequest();
+
+    xml.open("POST", "API/getTransports.php");
+
+    xml.onload = (e) => {
+
+        console.log(JSON.parse(e.target.response));
+
+    };
+
+    let data = new FormData();
+
+    data.append("start_lat", document.getElementById("start_lat").value);
+    data.append("start_lng", document.getElementById("start_lng").value);
+    data.append("dest_lat", document.getElementById("dest_lat").value);
+    data.append("dest_lng", document.getElementById("dest_lng").value);
+    xml.send(data);
 
 
     return false;
