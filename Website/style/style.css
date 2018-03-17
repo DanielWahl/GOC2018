@@ -269,13 +269,13 @@ nav #nav_mobile, nav #nav_mobile #nav_mobile_container {
     float: right;
     right: 0;
     margin-right: 46px;
-    margin-top: -58px;
+    margin-top: -175px;
     z-index: 101;
     transform: rotate(90deg);
 }
 
 #close_nav.index {
-    margin-top: -138px !important;
+    margin-top: -80px !important;
 }
 
 nav #nav_mobile #nav_mobile_container {

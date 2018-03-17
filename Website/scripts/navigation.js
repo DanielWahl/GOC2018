@@ -14,7 +14,10 @@ function close_navigation() {
 
 function changeTemplate() {
     $('section').fadeIn();
-    $('header').addClass("analyzed");
+    $("header").fadeIn("slow", function() {
+        $(this).addClass("analyzed");
+    });
+    $("#close_nav").addClass("index");
 }
 
 $(document).ready(function(){
