@@ -106,7 +106,22 @@ function getTransportVeloh($start_lat, $start_lng, $dest_lat, $dest_lng) {
     $output[] = Location($way_to_dest->status,"Destination", floatval($dest_lat), floatval($dest_lng), $way_to_dest->destination_addresses[0], "walking", $infos->distance->value, $infos->duration->value);
 
     return $output;
+}
 
 
 
+function getTransportWalking($start_lat, $start_lng, $dest_lat, $dest_lng) {
+
+    $way = json_decode(file_get_contents("http://maps.googleapis.com/maps/api/distancematrix/json?origins=" . $start_lat . "," . $start_lng . "&destinations=" . $dest_lat . "," . $dest_lng . "&mode=walking"));
+
+
+    $output = [];
+
+    $output[] = Location("OK", "START", $start_lat, $start_lng, $way->origin_addresses[0]);
+
+    $infos = $way->rows[0]->elements[0];
+    $output[] = Location($way->status, "DESTINATION", $dest_lat, $dest_lng, $way->destination_addresses[0], "walking", $infos->duration->value, $infos->distance->value);
+
+
+    return $output;
 }

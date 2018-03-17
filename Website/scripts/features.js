@@ -27,6 +27,23 @@ function loadValues() {
 
         console.log(response);
 
+        console.log("Walk");
+        console.log(response.walk[1].duration + "s");
+        console.log(response.walk[1].distance + "m");
+        console.log("Car");
+        console.log(response.car[1].duration + "s");
+        console.log(response.car[1].distance + "m");
+        console.log("Veloh");
+        console.log("Distance to nearest bikestation");
+        console.log(response.veloh[1].duration + "s");
+        console.log(response.veloh[1].distance + "m");
+        console.log("way by bike");
+        console.log(response.veloh[2].duration + "s");
+        console.log(response.veloh[2].distance + "m");
+        console.log("Distance to destination");
+        console.log(response.veloh[3].duration + "s");
+        console.log(response.veloh[3].distance + "m");
+
 
 
     };

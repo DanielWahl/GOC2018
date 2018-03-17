@@ -20,7 +20,7 @@ function Location($status, $location_name, $lat, $lng, $location_address, $mode=
             ],
             "address" => $location_address
         ],
-        "time" => $time,
+        "duration" => $time,
         "distance" => $distance,
         "mode" => $mode
     ];
