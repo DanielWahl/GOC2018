@@ -24,11 +24,6 @@ function PythagorasBlaaa($lat1, $lng1, $lat2, $lng2) {
 
 }
 
-
-function parseFloat($value) {
-    return floatval(preg_replace('#^([-]*[0-9\.,\' ]+?)((\.|,){1}([0-9-]{1,3}))*$#e', "str_replace(array('.', ',', \"'\", ' '), '', '\\1') . '.\\4'", $value));
-}
-
 function getTransportCar($start_lat, $start_lng, $dest_lat, $dest_lng) {
 
     $way = json_decode(file_get_contents("http://maps.googleapis.com/maps/api/distancematrix/json?origins=" . $start_lat . "," . $start_lng . "&destinations=" . $dest_lat . "," . $dest_lng . "&mode=driving"));
@@ -125,3 +120,35 @@ function getTransportWalking($start_lat, $start_lng, $dest_lat, $dest_lng) {
 
     return $output;
 }
+
+function getTransportBus($start_lat, $start_lng, $dest_lat, $dest_lng){
+
+    $origin = [
+        'lat' => floatval($start_lat),
+        'lng' => floatval($start_lng)
+    ];
+
+    $destination = [
+        'lat' => floatval( $dest_lat),
+        'lng' => floatval($dest_lng)
+    ];
+
+
+    $result = json_decode(file_get_contents('https://api.tfl.lu/v1/Journey/' . $origin['lat'] . ',' . $origin['lng'] . '/to/' . $destination['lat'] . ',' . $origin['lng'] . '?maxWalkDistance=50000'));
+
+    if(count($result->plan-iteraries) == 0){
+        echo 'ERROR';
+        exit;
+    }
+
+    $googleKey = 'AIzaSyD0klnwhWakNF6e3pkI2hkYGvu-By8CZ7I';
+    $stats = json_decode(file_get_contents('https://maps.googleapis.com/maps/api/distancematrix/json?mode=transit&units=imperial&origins=' . implode(',', $origin). '&destinations=' . implode(',', $destination) . '&key=' . $googleKey));
+
+    $output = [
+        'time' => floor(($result->plan->itineraries[0]->walkTime + $result->plan->itineraries[0]->transitTime + $result->plan->itineraries[0]->waitingTime) / 60),
+        'distance' => floor($stats->rows[0]->elements[0]->distance->value / 1000)
+    ];
+
+    echo json_encode($output);
+}
+
