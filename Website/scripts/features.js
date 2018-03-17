@@ -55,7 +55,7 @@ function loadValues() {
         let velohprice  = 0;
         let cardist     = response.car[1].distance/1000;
         let cartime     = Math.round(response.car[1].duration/60);
-        let carprice    = 0;
+        let carprice    = (8*cardist/100)*1.1; //8 is the average fuel used by a car for every 100 km, 1.1 is the average fuel price per liter
         let persondist  = response.walk[1].distance/1000;
         let persontime  = Math.round(response.walk[1].duration/60);
         let personprice = 0;
